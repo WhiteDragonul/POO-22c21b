@@ -31,6 +31,17 @@ public class Vehicul implements Reincarcabil{
          public float getPret() {
         return pret;
     }
+//getter Prozan Bogdan Madalin
+    private boolean validMarca(String marca) {
+        String[] marciValide = {"Dacia", "BMW", "Tesla", "VW"};
+        for(String m : marciValide) {
+            if(m.equalsIgnoreCase(marca)) return true;
+        }
+        return false;
+    }
+    private boolean validPret(float pret) {
+        return pret >= 1000 && pret <= 200000; // interval de exemplu
+    }
 //getter David Dascalu
     }
     @Override
