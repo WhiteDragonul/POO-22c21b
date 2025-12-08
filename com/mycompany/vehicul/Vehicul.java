@@ -10,7 +10,7 @@ package com.mycompany.vehicul;
  */
 //
 
-public class Vehicul implements Reincarcabil{
+public class Vehicul implements Reincarcabil, Serializable {
 
     public String marca;
     float pret;
