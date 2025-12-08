@@ -8,7 +8,7 @@ package com.mycompany.vehicul;
  *
  * @author adina
  */
-public class Electrica extends Masina implements Reincarcabil{
+public class Electrica extends Masina implements Reincarcabil, Serializable {
     int capacitateBaterie;
     
     /*public Electrica(){
