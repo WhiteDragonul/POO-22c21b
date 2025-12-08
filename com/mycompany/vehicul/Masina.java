@@ -8,7 +8,7 @@ package com.mycompany.vehicul;
  *
  * @author adina
  */
-public class Masina extends Vehicul {
+public class Masina extends Vehicul implements Serializable {
     byte vitezaMaxima;
     
     public Masina(){
