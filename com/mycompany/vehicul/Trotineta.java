@@ -8,7 +8,7 @@ package com.mycompany.vehicul;
  *
  * @author adina
  */
-public class Trotineta extends Vehicul implements Reincarcabil{
+public class Trotineta extends Vehicul implements Reincarcabil, Serializable {
     int capacitateBaterie;
     byte autonomieAcumulator;
     
