@@ -228,5 +228,47 @@ public class MainVehicul {
     v4.salveazaInFisier();
     //COD Panaite Cristian Florin
 
+//COD PROZAN BOGDAN MADALIN
+System.out.println("\n========================================");
+        System.out.println("TESTARE SCRIERE/CITIRE FISIER OCTETI (.dat)");
+        System.out.println("========================================");
+
+        // 1. Creare lista pentru test
+        List<Vehicul> vehiculePentruFisier = new ArrayList<>();
+        vehiculePentruFisier.add(new Masina("Volvo", 45000f, (byte)220));
+        vehiculePentruFisier.add(new Trotineta("Lime", 800f, 45, (byte)20));
+        vehiculePentruFisier.add(new Electrica());
+
+        System.out.println("1. Vehicule pregatite pentru scriere: " + vehiculePentruFisier.size());
+        for(Vehicul v : vehiculePentruFisier) {
+            System.out.println("   -> De scris: " + v.toString());
+        }
+
+        // 2. Definire nume fisier
+        String numeFisierBinar = "test_vehicule.dat";
+
+        // 3. Apelare functie scriere (Serializare)
+        FisierVehicule.scrieVehicule(vehiculePentruFisier, numeFisierBinar);
+
+        // 4. Testare Citire (Deserializare) intr-o lista noua
+        System.out.println("\n2. Citire date din fisier...");
+        List<Vehicul> vehiculeCititeDinFisier = FisierVehicule.citesteVehicule(numeFisierBinar);
+
+        // 5. Verificare
+        if (vehiculeCititeDinFisier != null) {
+            System.out.println("   -> Vehicule recuperate: " + vehiculeCititeDinFisier.size());
+            for (Vehicul v : vehiculeCititeDinFisier) {
+                System.out.println("   -> Citit: " + v.toString());
+
+                // Verificam daca functionalitatile specifice se pastreaza
+                if(v instanceof Reincarcabil) {
+                    System.out.print("      [Test Metoda]: ");
+                    ((Reincarcabil) v).reincarca();
+                }
+            }
+        } else {
+            System.out.println("   -> Eroare: Lista citita este null.");
+        }
+//COD PROZAN BOGDAN MADALIN
     
 }
